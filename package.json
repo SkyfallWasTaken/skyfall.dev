@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "skyfall.dev",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,7 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.5.2",
     "@fontsource-variable/inter": "^5.2.5",
     "@fontsource/fira-code": "^5.2.6",
     "@fontsource/open-sans": "^5.2.5",
