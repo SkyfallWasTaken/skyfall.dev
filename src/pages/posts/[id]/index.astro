@@ -1,0 +1,35 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+// import sitemap from "sitemap-ext:config";
+
+import PostLayout from "@layouts/Post.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: post,
+  }));
+}
+
+// sitemap(async ({ addToSitemap }) => {
+//   const blogPosts = await getCollection("posts");
+
+//   addToSitemap(
+//     blogPosts
+//       .filter((post) => !post.data.draft)
+//       .map((post) => ({
+//         id: post.id,
+//       }))
+//   );
+// });
+
+type Props = CollectionEntry<"posts">;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<PostLayout {...post.data}>
+  <Content />
+</PostLayout>

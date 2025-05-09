@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+import "remark-github-blockquote-alert/alert.css";
+
+import Layout from "./Layout.astro";
+
+type Props = CollectionEntry<"posts">["data"]; // & { ogImage: string; };
+const { title, description, pubDate, draft } = Astro.props;
+---
+
+<Layout title={title}>
+  <article class="prose dark:prose-invert">
+    <h1>{title}</h1>
+    <p class="text-lg text-muted-foreground">
+      {
+        pubDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }
+    </p>
+    <hr />
+    <slot />
+  </article>
+</Layout>
+
+<style is:global>
+  .prose
+    :where(p.markdown-alert-title):not(
+      :where([class~="not-prose"], [class~="not-prose"] *)
+    ) {
+    margin-top: 0 !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .prose .markdown-alert p:last-child {
+    margin: 0 !important;
+  }
+
+  /* .prose
+    :where(.markdown-alert p:last-child):not(
+      :where([class~="not-prose"], [class~="not-prose"] *)
+    ) {
+    margin-top: 0 !important;
+  } */
+</style>

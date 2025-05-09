@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const postsCollection = await getCollection("posts");
+const posts = postsCollection
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Mahad's posts">
+  <article class="prose dark:prose-invert">
+    <h1>posts</h1>
+    <ol class="space-y-1">
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/posts/${post.id}`} class="text-primary">
+              {post.data.title}
+            </a>
+            <p class="text-sm muted-foreground">
+              {post.data.pubDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </article>
+</Layout>
