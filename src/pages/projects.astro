@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Mahad's website">
+  <article class="prose">
+    <h1>projects</h1>
+    <p>
+      over the years, i've worked on a lot of projects, some of which are
+      open-source, and some of which are private. here are a few of my
+      favourites:
+    </p>
+
+    <a href="https://github.com/hackclub/archimedes"><h2>archimedes</h2></a>
+    <p>
+      a project i've built at hack club to help the folks at the newspaper team
+      to write articles once, and publish to both slack and <a
+        href="https://loops.so"
+        target="_blank">loops</a
+      >
+    </p>
+    <p>
+      this involved reverse engineering loops' internal api to send campaigns
+      without having to go through the web interface!
+    </p>
+
+    <a href="https://github.com/skyfallwastaken/high-seas-sveltekit"
+      ><h2>high seas v2</h2></a
+    >
+    <p>
+      <a href="https://highseas.hackclub.com" target="_blank">high seas'</a> official
+      website was slow and hard to use on mobile, so i made an unofficial version
+      of the site with sveltekit and airtable.js for accessing the site's data, which
+      ended up getting ~700 users in 3 weeks
+    </p>
+    <p>
+      i also added a "high seas wrapped" feature where participants could see
+      the most successful project they built, the most expensive item they won,
+      and other fun stats!
+    </p>
+
+    <a href="https://vortex.skyfall.dev"><h2>vortex</h2></a>
+    <p>
+      i was frustrated with getting endless spam in my inbox, so i built a
+      tempmail service with rust, react router, redis, and tailwind
+    </p>
+    <p>
+      it's ad-free, lightweight, loads fast, has a ton of domains in the pool
+      (around ten at the time of writing), and has some nice quality of life
+      features like showing sender logos. give it a try at <a
+        href="https://vortex.skyfall.dev"
+        target="_blank">vortex.skyfall.dev</a
+      >
+    </p>
+
+    <a href="https://github.com/skyfallwastaken/pocketbrain"
+      ><h2>pocketbrain</h2></a
+    >
+    <p>
+      i wanted to learn a bit more about programming language design, so i
+      decided to build an interpreter to <a
+        href="https://en.wikipedia.org/wiki/Brainfuck">brainf**k</a
+      > by urban muller.
+    </p>
+    <p>
+      it's built with rust and has a bunch of tests to ensure that everything
+      works properly. <a href="https://github.com/skyfallwastaken/pocketbrain"
+        >here's the code!</a
+      >
+    </p>
+
+    <a href="https://go.skyfall.dev/waka"><h2>wakatime for figma</h2></a>
+    <p>
+      i built a wakatime plugin for figma web with <a href="https://wxt.dev"
+        >wxt</a
+      >, svelte, typescript, and tailwind
+    </p>
+    <p>
+      it ended up getting 100+ users on the <a
+        href="https://chromewebstore.google.com/detail/wakatime-for-figma/ddoemmbdnemldilpbaofhnbhihjhbjni/"
+        >chrome web store</a
+      > alone, and was featured on wakatime's community page
+    </p>
+  </article>
+</Layout>
